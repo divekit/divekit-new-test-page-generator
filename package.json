@@ -1,0 +1,26 @@
+{
+  "name": "@jintveen/generate-report",
+  "version": "1.0.4",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "@jintveen/generate-report": "bin/generate-report",
+    "generate-report": "bin/generate-report"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "arg": "^4.1.1",
+    "ejs": "^2.7.1",
+    "esm": "^3.2.25",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.4",
+    "xml2json": "^0.11.2"
+  }
+}

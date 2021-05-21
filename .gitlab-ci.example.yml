@@ -1,0 +1,38 @@
+image: maven:latest
+
+stages:
+    - build
+    - deploy
+    - test
+
+build: # Build test reports
+  stage: build
+  script:
+    - mvn verify -fn # Always return status code 0 => Continue with the next stage
+  artifacts: # Keep reports for the next stage
+    paths:
+        - target/surefire-reports/TEST-*.xml
+
+pages: # Deploy test-report page
+  image: node:latest # use nodejs enviroment
+  stage: deploy
+  script:
+    - npm init -y
+    - npm install @jintveen/generate-report # install page generator
+    - npx generate-report --title $CI_PROJECT_NAME # genrate page
+
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
+test: # basic test stage
+  stage: test
+  script:
+    - mvn verify
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <title><%= title %></title>
+</head>
+
+<body>
+    <p class="meta-info" >Last updated: <%= createdTimeStamp %></p>
+    <%if (testsuites.length == 0) { %> <!--only show if there are no testsuites-->
+        <h1 class="failed" >Could not generate test page! Ensure that the project is compileable and rebuild the project. </h1>
+    <% } %>
+    <% testsuites.forEach(function(testsuite){ %>
+    <h1 class="<%= testsuite.status %>"><%= testsuite.name %></h1>
+    <div id="accordion">
+        <% testsuite.testcase.forEach(function(testcase){ %>
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link <%= testcase.status %> collapsed" data-toggle="collapse"
+                        data-target="#<%= testcase.name %>" aria-expanded="false" aria-controls="collapseOne">
+                        <h4><%= testcase.name %></h4>
+                    </button>
+                </h5>
+            </div>
+            <%if (testcase.hidden == false && testcase.failure) { %> <!--only show if !testcase.hidden-->
+            <div id="<%= testcase.name %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <h5 class="wrap-text">Message: <%= testcase.failure.message %></h5>
+                    <p>Type: <%= testcase.failure.type %></p>
+                </div>
+            </div>
+            <% } %>
+            <%if (testcase.hidden == false && testcase.error) { %> <!--only show if !testcase.hidden-->
+                <div id="<%= testcase.name %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <h5 class="wrap-text">Message: <%= testcase.error['$t'] %></h5>
+                        <p>Type: <%= testcase.error.type %></p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <% }); %>
+    </div>
+    <% }); %>
+</body>
+
+</html>
