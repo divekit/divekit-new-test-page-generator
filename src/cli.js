@@ -1,9 +1,6 @@
 import arg from 'arg';
 import fs from 'fs-extra';
-import util from 'util';
-import globModule from 'glob';
 import ejs from 'ejs';
-const glob = util.promisify(globModule);
 import parser from 'xml2json';
 
 const packageRoot = __dirname.replace('src', '');
@@ -21,7 +18,7 @@ function parseArgumentsIntoOptions(rawArgs) {
     );
     return {
         output: args['--output'] || 'public',
-        reports: args['--reports'] || 'target/surefire-reports',
+        reports: args['--reports'] || 'target/unified.xml',
         title: args['--title'] || 'Test Report',
     };
 }
@@ -46,24 +43,19 @@ export async function cli(args) {
 }
 
 const createHTML = async (reportsDir, options) => {
-    const fileList = await glob(reportsDir + '/*.xml')
-    const files = await Promise.all(fileList.map(async file => await fs.readFile(file, 'utf8')))
-    let testsuites = []
-    files.forEach((file) => {
-        const testsuite = JSON.parse(parser.toJson(file)).testsuite;
-        delete testsuite.properties
-        if(!testsuite.testcase.length){
-            testsuite.testcase = [testsuite.testcase]
+    const file = await fs.readFile(reportsDir, 'utf8');
+
+    let testsuites = JSON.parse(parser.toJson(file)).suites.testsuite;
+    if(!testsuites.length){
+        testsuites = [testsuites]
+    }
+
+    testsuites.forEach(testsuite => {
+        if(!testsuite.testcase.length) {
+            testsuite.testcase = [testsuite.testcase];
         }
-        testsuite.testcase.map(testcase => {
-            testcase.status = testcase.failure || testcase.error ? 'failed' : 'passed'
-            testcase.hidden = testcase.name.toLowerCase().includes("hidden");
-        });
-        const nameSplit = testsuite.name.split('.');
-        testsuite.name = nameSplit[nameSplit.length-1];
-        testsuite.status = parseInt(testsuite.failures) || parseInt(testsuite.errors) > 0 ? 'failed' : 'passed'
-        testsuites.push(testsuite);
-    })
+    });
+
     const template = await fs.readFile(packageRoot + 'templates/report.ejs', 'utf8')
     const html = ejs.render(template, { testsuites, title: options.title, createdTimeStamp: getTimeStamp() })
     return html;
