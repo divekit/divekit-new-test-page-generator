@@ -38,7 +38,7 @@
                         </button>
                     </h5>
                 </div>
-                <%if (testcase.hidden === false && testcase.failure) { %> <!--only show if !testcase.hidden-->
+                <%if (testcase.hidden === 'false' && testcase.failure !== undefined) { %> <!--only show if !testcase.hidden-->
                     <div id="<%= testcase.name %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
                             <h5 class="wrap-text">Message: <%= testcase.failure.message %></h5>
