@@ -1,6 +1,6 @@
 {
-  "name": "@archi-lab/generate-report",
-  "version": "1.0.0",
+  "name": "@divekit/generate-report",
+  "version": "1.0.1",
   "main": "index.js",
   "bin": {
     "generate-report": "bin/generate-report"
@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Archi-Lab",
+  "author": "divekit",
   "license": "MIT",
   "dependencies": {
     "arg": "^4.1.1",
@@ -23,12 +23,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/divekit/divekit-test-page-generator.git"
+    "url": "git+https://github.com/divekit/divekit-new-test-page-generator.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/divekit/divekit-test-page-generator/issues"
+    "url": "https://github.com/divekit/divekit-new-test-page-generator/issues"
   },
-  "homepage": "https://github.com/divekit/divekit-test-page-generator#readme",
+  "homepage": "https://github.com/divekit/divekit-new-test-page-generator#readme",
   "description": "This package generates a HTML Test-Page out of a unified xml format."
 }
