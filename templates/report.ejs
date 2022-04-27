@@ -32,7 +32,7 @@
             <div class="card">
                 <div class="card-header headingOne">
                     <h5 class="mb-0">
-                        <button class="btn btn-link <%= testcase.status %> collapsed" data-toggle="collapse"
+                        <button class="btn btn-link <%= testcase.status %> collapsed <%if (testcase.failure !== undefined) {%> failure <%} %>" data-toggle="collapse"
                             data-target="#<%= testcase.name %>" aria-expanded="false" aria-controls="collapseOne">
                             <h4><%= testcase.name %></h4>
                         </button>
