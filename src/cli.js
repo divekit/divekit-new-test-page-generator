@@ -2,6 +2,8 @@ import arg from 'arg';
 import fs from 'fs-extra';
 import ejs from 'ejs';
 import parser from 'xml2json';
+import {europeTimeString} from "./time";
+
 
 const packageRoot = __dirname.replace('src', '');
 
@@ -46,34 +48,19 @@ const createHTML = async (reportsDir, options) => {
     const file = await fs.readFile(reportsDir, 'utf8');
 
     let testsuites = JSON.parse(parser.toJson(file)).suites.testsuite;
-    if(!testsuites.length){
+    if (!testsuites.length) {
         testsuites = [testsuites]
     }
 
     testsuites.forEach(testsuite => {
-        if(!testsuite.testcase.length) {
+        if (!testsuite.testcase.length) {
             testsuite.testcase = [testsuite.testcase];
         }
     });
 
     const template = await fs.readFile(packageRoot + 'templates/report.ejs', 'utf8')
-    const html = ejs.render(template, { testsuites, title: options.title, createdTimeStamp: getTimeStamp() })
+    const html = ejs.render(template, {testsuites, title: options.title, createdTimeStamp: europeTimeString()})
     return html;
-}
-
-function getTimeStamp() {
-    var today = new Date();
-
-    var day = (today.getDate() < 10 ? "0" : "") + today.getDate();
-    var month = (today.getMonth()+1 < 10 ? "0" : "") + (today.getMonth() + 1);
-    var year = today.getFullYear();
-    var date = day + '-' + month + '-' + year;
-
-    var hours = (today.getHours() < 10 ? "0" : "") + today.getHours();
-    var minutes = (today.getMinutes() < 10 ? "0" : "") + today.getMinutes();
-    var seconds = (today.getSeconds() < 10 ? "0" : "") + today.getSeconds();
-    var time = hours + ":" + minutes + ":" + seconds + " UTC";
-    return date + ' ' + time;
 }
 
 const copyAssets = async () => {
