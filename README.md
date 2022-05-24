@@ -14,7 +14,7 @@
 
 ## Changelog
 
-### 1.0.1-beta.1
+### 1.0.2-beta.1
 - Die Fehlermeldung bei Generierungsproblemen wurde aktualisiert, sodass diese auch angezeigt wird, wenn nur Teile der
   Testseite nicht generiert werden konnten.
 - Es wurde ein Fehler behoben, bei welchem die Testseite nicht erzeugt werden konnte, sollte keinerlei input erfolgen
