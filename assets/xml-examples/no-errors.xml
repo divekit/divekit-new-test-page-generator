@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=""
+               name="E1BasicTests - LOCAL-DEMO-FILE" failures="0" type="JUnit" status="failed">
+        <testcase name="testNoMiningOnOrigin" status="failed" hidden="false">
+            <error message="Failed%20to%20load%20ApplicationContext" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Failed to load ApplicationContext
+            Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name
+            'workingDroneController' defined in file
+            [/builds/students/st2/ss22/m1/tests/ST2M1_tests_group_ee2da94e-1705-4fd1-a584-3a549caf025f/target/classes/thkoeln/st/st2praktikum/certification/WorkingDroneController.class]:
+            Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException:
+            Failed to instantiate [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw
+            exception; nested exception is java.lang.NullPointerException
+            Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate
+            [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw exception; nested
+            exception is java.lang.NullPointerException
+            Caused by: java.lang.NullPointerException]]></error>
+        </testcase>
+        <testcase name="testNoDoubleMine" status="failed" hidden="false">
+            <error message="Failed%20to%20load%20ApplicationContext" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Failed to load ApplicationContext
+            Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name
+            'workingDroneController' defined in file
+            [/builds/students/st2/ss22/m1/tests/ST2M1_tests_group_ee2da94e-1705-4fd1-a584-3a549caf025f/target/classes/thkoeln/st/st2praktikum/certification/WorkingDroneController.class]:
+            Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException:
+            Failed to instantiate [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw
+            exception; nested exception is java.lang.NullPointerException
+            Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate
+            [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw exception; nested
+            exception is java.lang.NullPointerException
+            Caused by: java.lang.NullPointerException]]></error>
+        </testcase>
+        <testcase name="testJustOnePlanetFoundAfterReset" status="failed" hidden="false">
+            <error message="Failed%20to%20load%20ApplicationContext" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Failed to load ApplicationContext
+            Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name
+            'workingDroneController' defined in file
+            [/builds/students/st2/ss22/m1/tests/ST2M1_tests_group_ee2da94e-1705-4fd1-a584-3a549caf025f/target/classes/thkoeln/st/st2praktikum/certification/WorkingDroneController.class]:
+            Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException:
+            Failed to instantiate [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw
+            exception; nested exception is java.lang.NullPointerException
+            Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate
+            [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw exception; nested
+            exception is java.lang.NullPointerException
+            Caused by: java.lang.NullPointerException]]></error>
+        </testcase>
+        <testcase name="testNoDoubleSpawn" status="failed" hidden="false">
+            <error message="Failed%20to%20load%20ApplicationContext" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: Failed to load ApplicationContext
+            Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name
+            'workingDroneController' defined in file
+            [/builds/students/st2/ss22/m1/tests/ST2M1_tests_group_ee2da94e-1705-4fd1-a584-3a549caf025f/target/classes/thkoeln/st/st2praktikum/certification/WorkingDroneController.class]:
+            Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException:
+            Failed to instantiate [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw
+            exception; nested exception is java.lang.NullPointerException
+            Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate
+            [thkoeln.st.st2praktikum.certification.WorkingDroneController]: Constructor threw exception; nested
+            exception is java.lang.NullPointerException
+            Caused by: java.lang.NullPointerException]]></error>
+        </testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=""
+               name="E1BasicTests" failures="3" type="JUnit" status="failed">
+        <testcase name="testNoCollectingOnOrigin" status="failed" hidden="false">
+            <failure
+                    message="Expected%20thkoeln.st.st2praktikum.certification.RobotControlException%20to%20be%20thrown,%20but%20nothing%20was%20thrown."
+                    type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Expected
+            thkoeln.st.st2praktikum.certification.RobotControlException to be thrown, but nothing was thrown.
+            at thkoeln.st.st2praktikum.exercise1.E1BasicTests.testNoCollectingOnOrigin(E1BasicTests.java:42)]]></failure>
+        </testcase>
+        <testcase name="testNoDoubleCollect" status="failed" hidden="false">
+            <error message="Index:%200" type="java.lang.IndexOutOfBoundsException"><![CDATA[java.lang.IndexOutOfBoundsException: Index:
+            0
+            at thkoeln.st.st2praktikum.exercise1.E1BasicTests.testNoDoubleCollect(E1BasicTests.java:56)]]></error>
+        </testcase>
+        <testcase name="testJustOneAsteroidFoundAfterReset" status="failed" hidden="false">
+            <failure message="expected:%20%3C1%3E%20but%20was:%20%3C0%3E" type="org.opentest4j.AssertionFailedError">
+                <![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at thkoeln.st.st2praktikum.exercise1.E1BasicTests.testJustOneAsteroidFoundAfterReset(E1BasicTests.java:35)]]></failure>
+        </testcase>
+        <testcase name="testNoDoubleCreate" status="failed" hidden="false">
+            <failure
+                    message="Error%20for%20double%20creation%20expected%20==%3E%20Expected%20thkoeln.st.st2praktikum.certification.RobotControlException%20to%20be%20thrown,%20but%20nothing%20was%20thrown."
+                    type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Error for double
+            creation
+            expected ==> Expected thkoeln.st.st2praktikum.certification.RobotControlException to be thrown, but nothing
+            was
+            thrown.
+            at thkoeln.st.st2praktikum.exercise1.E1BasicTests.testNoDoubleCreate(E1BasicTests.java:48)]]></failure>
+        </testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=""
+               name="E2CleanCodeSolidManualTest" failures="0" type="JUnit" status="failed">
+        <testcase name="testCleanCodeAndSolidReview" status="failed" hidden="false">
+            <error message="-%20break%20pipeline%20%3C--%0A" type="java.lang.Exception"><![CDATA[java.lang.Exception:
+- break pipeline <--
+
+	at thkoeln.st.st2praktikum.exercise1.E2CleanCodeSolidManualTest.testCleanCodeAndSolidReview(E2CleanCodeSolidManualTest.java:13)]]></error>
+        </testcase>
+    </testsuite>
+
+
+    <testsuite name="Clean-Code-Principles by PMD" status="failed" type="CleanCode">
+        <testcase name="Keep it simple, stupid" status="passed" hidden="false"></testcase>
+        <testcase name="Principle of Least Astonishment" status="passed" hidden="false"></testcase>
+        <testcase name="Meaningful names" status="failed" hidden="false">
+            <error type="LocalVariableNamingConventions" location="Line: 90 - 90 Column: 13 - 22"
+                   file="C:\work\gitlab-repos\ST2MS0_tests_group_d5535b06-ae29-4668-8ad9-bd23b4cc5218\src\main\java\thkoeln\st\st2praktikum\bad_stuff\Robot.java"
+                   message="The local variable name &apos;snake_case&apos; doesn&apos;t match &apos;[a-z][a-zA-Z0-9]*&apos;"></error>
+        </testcase>
+        <testcase name="Single Responsibility Principle" status="passed" hidden="false"></testcase>
+        <testcase name="Open Closed Principle" status="passed" hidden="false"></testcase>
+    </testsuite>
+
+</suites>

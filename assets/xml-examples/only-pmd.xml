@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+    <testsuite name="Clean-Code-Principles by PMD" status="passed" type="CleanCode">
+        <testcase name="Keep it simple, stupid" status="passed" hidden="false"></testcase>
+        <testcase name="Principle of Least Astonishment" status="passed" hidden="false"></testcase>
+        <testcase name="Meaningful names" status="passed" hidden="false"></testcase>
+        <testcase name="Single Responsibility Principle" status="passed" hidden="false"></testcase>
+        <testcase name="Open Closed Principle" status="passed" hidden="false"></testcase>
+    </testsuite>
+</suites>
