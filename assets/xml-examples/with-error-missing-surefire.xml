@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+
+
+
+    <testsuite name="Clean-Code-Principles by PMD" status="failed" type="CleanCode">
+        <testcase name="Keep it simple, stupid" status="passed" hidden="false"></testcase>
+        <testcase name="Principle of Least Astonishment" status="passed" hidden="false"></testcase>
+        <testcase name="Meaningful names" status="failed" hidden="false">
+            <error type="LocalVariableNamingConventions" location="Line: 90 - 90 Column: 13 - 22"
+                   file="C:\work\gitlab-repos\ST2MS0_tests_group_d5535b06-ae29-4668-8ad9-bd23b4cc5218\src\main\java\thkoeln\st\st2praktikum\bad_stuff\Robot.java"
+                   message="The local variable name &apos;snake_case&apos; doesn&apos;t match &apos;[a-z][a-zA-Z0-9]*&apos;"></error>
+        </testcase>
+        <testcase name="Single Responsibility Principle" status="passed" hidden="false"></testcase>
+        <testcase name="Open Closed Principle" status="passed" hidden="false"></testcase>
+    </testsuite>
+
+
+</suites>
