@@ -21,9 +21,14 @@
 </head>
 
 <body>
-    <p class="meta-info" >Last updated: <%= createdTimeStamp %></p>
-    <%if (testsuites.length === 0) { %> <!--only show if there are no testsuites-->
-        <h1 class="failed" >Could not generate test page! Ensure that the project is compileable and rebuild the project. </h1>
+    <p class="meta-info">Last updated: <%= createdTimeStamp %></p>
+    <%if (testsuiteErrors.length !== 0 || testsuites.length === 0) { %> <!--only show if there are explizit erros or no testsuites-->
+        <div class="warning-box">
+            <span class="warning-box-text">Warning!</span> Errors occurred while generating the test page.
+            The test page is probably not complete. Make sure that your project is compilable.
+            <span class="hidden">(Missing modules: <%= testsuiteErrors %>)</span>
+        </div>
+        <br>
     <% } %>
     <% testsuites.forEach(function(testsuite){ %>
     <h1 class="<%= testsuite.status %>"><%= testsuite.name %></h1>

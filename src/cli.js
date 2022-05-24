@@ -48,19 +48,30 @@ const createHTML = async (reportsDir, options) => {
     const file = await fs.readFile(reportsDir, 'utf8');
 
     let testsuites = JSON.parse(parser.toJson(file)).suites.testsuite;
-    if (!testsuites.length) {
-        testsuites = [testsuites]
-    }
+    let testsuiteErrors = JSON.parse(parser.toJson(file)).suites.testsuiteError;
+
+    testsuites = transformToArray(testsuites)
+    testsuiteErrors = transformToArray(testsuiteErrors)
 
     testsuites.forEach(testsuite => {
-        if (!testsuite.testcase.length) {
-            testsuite.testcase = [testsuite.testcase];
-        }
+        testsuite.testcase = transformToArray(testsuite.testcase)
     });
 
     const template = await fs.readFile(packageRoot + 'templates/report.ejs', 'utf8')
-    const html = ejs.render(template, {testsuites, title: options.title, createdTimeStamp: europeTimeString()})
+    const html = ejs.render(template, {testsuites, title: options.title, createdTimeStamp: europeTimeString(), testsuiteErrors})
     return html;
+}
+
+/**
+ * ensures that the given object is an array by either:
+ * (1) returning a given array without any changes
+ * (2) creating an array with a single entry
+ * (3) creating an empty array, if the input is invalid
+ */
+function transformToArray(variable) {
+    if (!variable) return []
+    if (!variable.length) return [variable]
+    return variable
 }
 
 const copyAssets = async () => {
