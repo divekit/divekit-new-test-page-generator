@@ -103,7 +103,16 @@ function extractNote(testsuites) {
     const element = testsuites[resultIndex]
     testsuites.splice(resultIndex, 1)
 
-    return element.testcase[0].error['$t'] // $t is the content-body of the xml
+    const exceptionMsg = element.testcase[0].error['$t'] // $t is the content-body of the xml
+
+    return extractExceptionMessage(exceptionMsg)
+}
+
+function extractExceptionMessage(exceptionString) {
+    const cleanedStart = exceptionString.split('java.lang.Exception:')[1]
+    const cleanString = cleanedStart.split('at thkoeln.st')[0]
+
+    return cleanString
 }
 
 /**

@@ -100,8 +100,9 @@
                name="Note" failures="0" type="JUnit" status="failed">
         <testcase name="customNote" status="failed" hidden="false">
             <error message="-%20break%20pipeline%20%3C--%0A" type="java.lang.Exception"><![CDATA[
-            java.lang.Exception: at thkoeln.st.st2praktikum.Note.customNote(Note.java:10)
+            java.lang.Exception:
             Das ginge an Stelle ABC aber noch ein wenig schöner. Solltest du noch anpassen, sonst knallt es im nächsten Meilenstein. -PS
+            at thkoeln.st.st2praktikum.Note.customNote(Note.java:10)
             ]]></error>
         </testcase>
     </testsuite>
