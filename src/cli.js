@@ -57,9 +57,51 @@ const createHTML = async (reportsDir, options) => {
         testsuite.testcase = transformToArray(testsuite.testcase)
     });
 
+    const note = extractNote(testsuites)
+    const metaInfo = calcMetaInfo(testsuites, testsuiteErrors)
     const template = await fs.readFile(packageRoot + 'templates/report.ejs', 'utf8')
-    const html = ejs.render(template, {testsuites, title: options.title, createdTimeStamp: europeTimeString(), testsuiteErrors})
+    const html = ejs.render(template, {
+        testsuites, testsuiteErrors, note, metaInfo, title: options.title, createdTimeStamp: europeTimeString()
+    })
     return html;
+}
+
+function calcMetaInfo(testsuites, testsuiteErrors) {
+    let totalTestCaseCount = 0
+    let successfulTestCount = 0
+    let failedTestCount = 0
+    let errorCount = testsuiteErrors.length
+
+    testsuites.forEach(testcase => {
+        if (testcase.status === 'passed') successfulTestCount++
+        if (testcase.status === 'failed') failedTestCount++
+        totalTestCaseCount++
+    })
+
+    const calculationErrorFlag = totalTestCaseCount !== (successfulTestCount + failedTestCount)
+    if (calculationErrorFlag) console.warn("Calculation Error for Metadata.")
+
+    return {
+        totalTestCaseCount: totalTestCaseCount,
+        failedTestCount: failedTestCount,
+        modulErrorCount: errorCount
+    };
+}
+
+function extractNote(testsuites) {
+    let index = 0
+    let resultIndex = -1
+    testsuites.forEach(value => {
+        if (value.name === 'Note') resultIndex = index
+        index++
+    })
+
+    if (resultIndex < 0) return ''
+
+    const element = testsuites[resultIndex]
+    testsuites.splice(resultIndex, 1)
+
+    return element.testcase[0].error['$t'] // $t is the content-body of the xml
 }
 
 /**
@@ -71,6 +113,7 @@ const createHTML = async (reportsDir, options) => {
 function transformToArray(variable) {
     if (!variable) return []
     if (!variable.length) return [variable]
+    if (!Array.isArray(variable)) return [variable]
     return variable
 }
 

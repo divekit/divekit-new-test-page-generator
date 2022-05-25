@@ -21,14 +21,26 @@
 </head>
 
 <body>
-    <p class="meta-info">Last updated: <%= createdTimeStamp %></p>
+    <p class="meta-info">
+        <span id="timestamp">Last updated: <%= createdTimeStamp %></span>
+        <span class="hidden italic">
+            | TotalTestCount: <span id="totalTestCount"><%= metaInfo.totalTestCaseCount %></span> /
+            FailedTestCount: <span id="failedTestCount"><%= metaInfo.failedTestCount %></span> /
+            ModuleErrorCount: <span id="modulErrorCount"><%= metaInfo.modulErrorCount %></span>
+        </span>
+    </p>
+
     <%if (testsuiteErrors.length !== 0 || testsuites.length === 0) { %> <!--only show if there are explizit erros or no testsuites-->
         <div class="warning-box">
             <span class="warning-box-text">Warning!</span> Errors occurred while generating the test page.
             The test page is probably not complete. Make sure that your project is compilable.
             <span class="hidden">(Missing modules: <%= testsuiteErrors %>)</span>
         </div>
-        <br>
+    <% } %>
+    <%if (note) { %>
+    <div class="info-box">
+        <span class="warning-box-text">Info:</span><%= note %>
+    </div>
     <% } %>
     <% testsuites.forEach(function(testsuite){ %>
     <h1 class="<%= testsuite.status %>"><%= testsuite.name %></h1>

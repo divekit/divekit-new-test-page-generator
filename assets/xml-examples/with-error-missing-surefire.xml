@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suites>
 
-
+    <testsuiteError>Surefire</testsuiteError>
 
     <testsuite name="Clean-Code-Principles by PMD" status="failed" type="CleanCode">
         <testcase name="Keep it simple, stupid" status="passed" hidden="false"></testcase>

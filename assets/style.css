@@ -9,6 +9,21 @@
     border-left: 5px solid #A75753; /* 50 darker */
 }
 
+.info-box {
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 5px #ccc;
+    background-color: #ebebeb;
+    border-left: 5px solid #9b9b9b; /* 50 darker */
+}
+
+.italic {
+    font-style:italic
+}
+
 .warning-box-text {
     font-weight: bold;
 }
