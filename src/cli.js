@@ -72,10 +72,12 @@ function calcMetaInfo(testsuites, testsuiteErrors) {
     let failedTestCount = 0
     let errorCount = testsuiteErrors.length
 
-    testsuites.forEach(testcase => {
-        if (testcase.status === 'passed') successfulTestCount++
-        if (testcase.status === 'failed') failedTestCount++
-        totalTestCaseCount++
+    testsuites.forEach(suite => {
+        suite.testcase.forEach(test => {
+            if (test.status === 'passed') successfulTestCount++
+            if (test.status === 'failed') failedTestCount++
+            totalTestCaseCount++
+        })
     })
 
     const calculationErrorFlag = totalTestCaseCount !== (successfulTestCount + failedTestCount)
