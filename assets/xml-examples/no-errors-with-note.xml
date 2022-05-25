@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suites>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E0CompatibilityBasicTests" failures="0" type="JUnit" status="passed">
+        <testcase name="testNoHarvestingOnOrigin" status="passed" hidden="false"></testcase>
+        <testcase name="testNoDoubleHarvest" status="passed" hidden="false"></testcase>
+        <testcase name="testJustOnePlanetFoundAfterReset" status="passed" hidden="false"></testcase>
+        <testcase name="testNoDoubleCreate" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E0CompatibilityMovementTests" failures="0" type="JUnit" status="passed">
+        <testcase name="test2HarvestMultipleTimes" status="passed" hidden="false"></testcase>
+        <testcase name="test0PlanetTypeOk" status="passed" hidden="false"></testcase>
+        <testcase name="test3TwoExplorationRobotsOnSamePlanet" status="passed" hidden="false"></testcase>
+        <testcase name="test1MoveAgainstBlock" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E0CompatibilityValidationTests" failures="0" type="JUnit" status="passed">
+        <testcase name="testGetPlanetType" status="passed" hidden="false"></testcase>
+        <testcase name="testNeighboursDetected" status="passed" hidden="false"></testcase>
+        <testcase name="testGetPlanetTitaniumAmount" status="passed" hidden="false"></testcase>
+        <testcase name="testExecuteTaskValidation" status="passed" hidden="false"></testcase>
+        <testcase name="testGetExplorationRobotPlanet" status="passed" hidden="false"></testcase>
+        <testcase name="testTitaniumDetected" status="passed" hidden="false"></testcase>
+        <testcase name="testGetExplorationRobotLoad" status="passed" hidden="false"></testcase>
+        <testcase name="testGetPlanetExplorationRobots" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E1DomainPrimitiveFunctionalTests" failures="0" type="JUnit" status="passed">
+        <testcase name="fillLoadWithValidTitaniumTest" status="passed" hidden="false"></testcase>
+        <testcase name="cardinalDirectionOppositeDirectionTest" status="passed" hidden="false"></testcase>
+        <testcase name="loadHasMoreFreeCapacityThanOtherFailureTest" status="passed" hidden="false"></testcase>
+        <testcase name="titaniumCompareTest" status="passed" hidden="false"></testcase>
+        <testcase name="testCardinalDirectionPathAddAndBacktrack" status="passed" hidden="false"></testcase>
+        <testcase name="titaniumFromAmountTest" status="passed" hidden="false"></testcase>
+        <testcase name="createdTaskFromStringTest" status="passed" hidden="false"></testcase>
+        <testcase name="titaniumValueChangeTest" status="passed" hidden="false"></testcase>
+        <testcase name="leaveBehindTitaniumWithValidTitaniumTest" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E1DomainPrimitiveRulesTests" failures="0" type="JUnit" status="passed">
+        <testcase name="noSetter" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E1DomainPrimitiveValidationTests" failures="0" type="JUnit" status="passed">
+        <testcase name="titaniumFromAmountFailureTest" status="passed" hidden="false"></testcase>
+        <testcase name="loadCreatedFailingTest" status="passed" hidden="false"></testcase>
+        <testcase name="loadHasMoreFreeCapacityThanOtherFailureTest" status="passed" hidden="false"></testcase>
+        <testcase name="TitaniumValueChangeFailureTest" status="passed" hidden="false"></testcase>
+        <testcase name="taskFailedParsingTest" status="passed" hidden="false"></testcase>
+        <testcase name="titaniumCompareFailureTest" status="passed" hidden="false"></testcase>
+        <testcase name="fillLoadWithInvalidTitaniumTest" status="passed" hidden="false"></testcase>
+        <testcase name="testNoActionsForEmptyCardinalDirectionPath" status="passed" hidden="false"></testcase>
+        <testcase name="leaveBehindResourceWithInvalidTitaniumTest" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E2FairnessRuleTest" failures="0" type="JUnit" status="passed">
+        <testcase name="noCycles" status="passed" hidden="false"></testcase>
+        <testcase name="test4TwoExplorationRobotsHarvestOnSamePlanet" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E3PackageStructureTest" failures="0" type="JUnit" status="passed">
+        <testcase name="testPackageStructure" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="E4CleanCodeSolidManualTest" failures="0" type="JUnit" status="passed">
+        <testcase name="testCleanCodeAndSolidReview" status="passed" hidden="false"></testcase>
+    </testsuite>
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd"
+               name="NoteTest" failures="0" type="JUnit" status="failed">
+        <testcase name="customNote" status="failed" hidden="false">
+            <error message="-%20Test%20Notiz,%20hier%20k%C3%B6nnte%20Ihre%20Werbung%20stehen!%0A%0AKorrigiert%20von:%20PS%0A"
+                   type="java.lang.Exception"><![CDATA[java.lang.Exception:
+- Test Notiz, hier könnte Ihre Werbung stehen!
+Korrigiert von: PS
+	at thkoeln.st.st2praktikum.NoteTest.customNote(NoteTest.java:13)]]></error>
+        </testcase>
+    </testsuite>
+    <testsuite name="Clean-Code-Principles by PMD" status="passed" type="CleanCode">
+        <testcase name="Keep it simple, stupid" status="passed" hidden="false"></testcase>
+        <testcase name="Principle of Least Astonishment" status="passed" hidden="false"></testcase>
+        <testcase name="Meaningful names" status="passed" hidden="false"></testcase>
+        <testcase name="Single Responsibility Principle" status="passed" hidden="false"></testcase>
+        <testcase name="Open Closed Principle" status="passed" hidden="false"></testcase>
+    </testsuite>
+</suites>

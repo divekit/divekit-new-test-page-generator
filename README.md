@@ -13,6 +13,8 @@
   dabei ist das der `divekit-new-testpage-generator` im selben Ordner wie der `divekit-report-mapper` liegt.
 
 ## Changelog
+### 1.0.2-beta.4
+- Es wurde ein Fehler bei der Anzeige von Notizen behoben
 ### 1.0.2-beta.3
 - Fehler bei der Berechnung der Metadaten wurde behoben
 - Anzeige dee Notiz wurde überarbeitet (Exception-Overhead wurde entfernen)

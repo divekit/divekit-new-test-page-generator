@@ -96,14 +96,14 @@
         </testcase>
     </testsuite>
 
-    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=""
-               name="Note" failures="0" type="JUnit" status="failed">
+    <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation=""
+               name="NoteTest" failures="0" type="JUnit" status="failed">
         <testcase name="customNote" status="failed" hidden="false">
-            <error message="-%20break%20pipeline%20%3C--%0A" type="java.lang.Exception"><![CDATA[
-            java.lang.Exception:
-            Das ginge an Stelle ABC aber noch ein wenig schöner. Solltest du noch anpassen, sonst knallt es im nächsten Meilenstein. -PS
-            at thkoeln.st.st2praktikum.Note.customNote(Note.java:10)
-            ]]></error>
+            <error message="-%20Test%20Notiz,%20hier%20k%C3%B6nnte%20Ihre%20Werbung%20stehen!%0A%0AKorrigiert%20von:%20PS%0A"
+                   type="java.lang.Exception"><![CDATA[java.lang.Exception:
+Test Notiz, hier könnte Ihre Werbung stehen! -PS
+	at thkoeln.st.st2praktikum.NoteTest.customNote(NoteTest.java:13)]]></error>
         </testcase>
     </testsuite>
 

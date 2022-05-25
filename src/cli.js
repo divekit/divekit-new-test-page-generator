@@ -6,6 +6,7 @@ import {europeTimeString} from "./time";
 
 
 const packageRoot = __dirname.replace('src', '');
+const NOTE_TEST_NAME = 'NoteTest'
 
 function parseArgumentsIntoOptions(rawArgs) {
     const args = arg(
@@ -94,7 +95,7 @@ function extractNote(testsuites) {
     let index = 0
     let resultIndex = -1
     testsuites.forEach(value => {
-        if (value.name === 'Note') resultIndex = index
+        if (value.name === NOTE_TEST_NAME) resultIndex = index
         index++
     })
 
