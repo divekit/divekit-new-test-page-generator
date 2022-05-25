@@ -13,6 +13,9 @@
   dabei ist das der `divekit-new-testpage-generator` im selben Ordner wie der `divekit-report-mapper` liegt.
 
 ## Changelog
+### 1.0.2-beta.3
+- Fehler bei der Berechnung der Metadaten wurde behoben
+- Anzeige dee Notiz wurde überarbeitet (Exception-Overhead wurde entfernen)
 ### 1.0.2-beta.2
 - Verstecke Metadaten im Header hinzugefügt, welche die Anzahl fehlgeschlagener Tests angibt.
 - Möglichkeit hinzugefügt einen speziellen 'Note' Testfall zu übergeben, welcher gesondert angezeigt wird.
