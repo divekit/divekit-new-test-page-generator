@@ -1,17 +1,17 @@
 {
-  "name": "@divekit/generate-report",
-  "version": "1.0.2",
+  "name": "@divekit/report-visualizer",
+  "version": "1.0.3",
   "main": "index.js",
   "bin": {
-    "generate-report": "bin/generate-report"
+    "report-visualizer": "bin/report-visualizer"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node bin/generate-report --reports assets/xml-examples/unified.xml",
-    "dev++": "node bin/generate-report --reports ../divekit-report-mapper/target/unified.xml"
+    "dev": "node bin/report-visualizer --reports assets/xml-examples/unified.xml",
+    "dev++": "node bin/report-visualizer --reports ../divekit-report-mapper/target/unified.xml"
   },
   "author": "divekit",
   "license": "MIT",
@@ -27,12 +27,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/divekit/divekit-new-test-page-generator.git"
+    "url": "git+https://github.com/divekit/divekit-report-visualizer.git"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/divekit/divekit-new-test-page-generator/issues"
+    "url": "https://github.com/divekit/divekit-report-visualizer/issues"
   },
-  "homepage": "https://github.com/divekit/divekit-new-test-page-generator#readme",
+  "homepage": "https://github.com/divekit/divekit-report-visualizer#readme",
   "description": "This package generates a HTML Test-Page out of a unified xml format."
 }
